@@ -31,10 +31,17 @@ void find_combinations(int score) {
 void main() {
     int score;
 
-    // Input the desired score
-    printf("Enter the desired NFL score: ");
-    scanf("%d", &score);
+    while (1) {
+        // Input the desired score, if 0 or 1 is entered end the program
+        printf("\nEnter 0 or 1 to STOP: ");
+        printf("Enter the desired NFL score: ");
+        scanf("%d", &score);
 
-    printf("All combinations for a score of %d:\n", score);
-    find_combinations(score);
+        if (score < 2) {
+            break;
+        }
+
+        printf("All combinations for a score of %d:\n", score);
+        find_combinations(score);
+    }
 }
