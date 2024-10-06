@@ -13,8 +13,10 @@ void find_combinations(int score) {
             for (int n_td = 0; n_td * td <= score; ++n_td) {
                 for (int n_fg = 0; n_fg * fg <= score; ++n_fg) {
                     for (int n_safety = 0; n_safety * safety <= score; ++n_safety) {
+                        // Calculate the total score for the current combination
                         int total = n_td_2pc * td_2pc + n_td_pat * td_pat + n_td * td + n_fg * fg + n_safety * safety;
 
+                        // Check if the total matches the target score
                         if (total == score) {
                             printf("%d TD + 2pt, %d TD + PAT, %d TD, %d 3pt FG, %d Safety\n",
                                    n_td_2pc, n_td_pat, n_td, n_fg, n_safety);
